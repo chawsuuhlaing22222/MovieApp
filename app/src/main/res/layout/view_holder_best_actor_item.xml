@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginStart="@dimen/margin_medium_2"
+    android:layout_width="@dimen/width_actor_item"
+    android:layout_height="@dimen/height_actor_item">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivActorImage"
+        tools:srcCompat="@drawable/placeholder_actor_image"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+   <View
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@drawable/gradient_actor_bg"
+       />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivFavorite"
+        app:srcCompat="@drawable/ic_baseline_favorite_white_24dp"
+        android:scaleType="centerCrop"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:tint="@color/colorAccent"
+        android:layout_width="@dimen/margin_large"
+        android:layout_height="@dimen/margin_large"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivLike"
+        app:srcCompat="@drawable/ic_baseline_thumb_up_white_24dp"
+        android:layout_alignParentBottom="true"
+        app:tint="@color/colorAccent"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:layout_width="@dimen/margin_medium_2"
+        android:layout_height="@dimen/margin_medium_2"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLikeDesc"
+        android:text="You Like 5 movies"
+        android:textSize="@dimen/text_smaller"
+        android:textColor="@color/colorSecondaryText"
+        android:textStyle="bold"
+        android:layout_alignBottom="@id/ivLike"
+        android:layout_toEndOf="@id/ivLike"
+        android:elevation="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_card_medium_2"
+        android:layout_marginStart="@dimen/text_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvActorName"
+        android:text="Song Hye Kyo"
+
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginEnd="@dimen/margin_card_medium_2"
+        android:layout_alignStart="@id/ivLike"
+        android:layout_above="@id/ivLike"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/width_show_case_item"
+    android:layout_height="@dimen/height_show_case_item"
+    android:layout_marginStart="@dimen/margin_card_medium_2"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivShowCase"
+        app:srcCompat="@drawable/placeholder_wolverine_image"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPlayShowCase"
+        app:icon="@drawable/ic_baseline_play_arrow_black_24dp"
+        android:elevation="@dimen/margin_medium"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
+        android:layout_centerInParent="true"
+        android:contentDescription="Show case PLay"
+        app:iconPadding="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:insetTop="0dp"
+        android:insetLeft="0dp"
+        app:cornerRadius="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_xlarge"
+        android:layout_width="@dimen/margin_xxlarge"
+        android:layout_height="@dimen/margin_xxlarge"
+        android:backgroundTint="@color/colorAccent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvShowCaseMovieDate"
+        android:text="11 Dec 2022"
+        android:elevation="@dimen/margin_medium"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvShowCaseMovieName"
+        android:text="Passenger"
+        android:elevation="@dimen/margin_medium"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_regular_2x"
+        android:textColor="@color/white"
+        android:layout_above="@id/tvShowCaseMovieDate"
+        android:layout_alignStart="@id/tvShowCaseMovieDate"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:elevation="@dimen/margin_small"
+        android:background="@color/color_transparent_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</RelativeLayout>

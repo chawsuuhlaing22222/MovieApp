@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MovieDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolBarMovieDetail"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="@color/colorPrimaryDark"
+            app:collapsedTitleTextColor="@color/white"
+            app:expandedTitleTextColor="@android:color/transparent"
+            app:title="Fantastic Beasts And Where To Find Them"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_collasping_toolbar_movie_detail">
+
+<!--            back button-->
+            <FrameLayout
+                android:id="@+id/btnBack"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:background="@drawable/bg_back_arrow"
+                android:layout_width="@dimen/margin_xlarge"
+                android:elevation="@dimen/margin_medium"
+                android:layout_height="@dimen/margin_xlarge">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    app:srcCompat="@drawable/ic_baseline_chevron_left_white_24dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </FrameLayout>
+
+<!--            search button-->
+            <androidx.appcompat.widget.AppCompatImageView
+                app:srcCompat="@drawable/ic_search"
+                android:layout_gravity="end"
+                android:elevation="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/margin_large"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMovieImg"
+                app:layout_collapseMode="parallax"
+                tools:srcCompat="@drawable/placeholder_wolverine_image"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <androidx.appcompat.widget.Toolbar
+                app:layout_collapseMode="pin"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"/>
+
+            <View
+                app:layout_collapseMode="parallax"
+                android:background="@drawable/gradient_actor_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <RelativeLayout
+                app:layout_collapseParallaxMultiplier="1.0"
+                app:layout_collapseMode="parallax"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMovieDetailName"
+                    android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:layout_alignParentBottom="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_heading_1x"
+                    android:layout_marginBottom="@dimen/margin_medium_3"
+                    tools:text="Fantastic Beasts And Where To Find Them"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvReleasedYear"
+                    android:text="2016"
+                    android:background="@drawable/gradient_movie_release_date"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_above="@id/tvMovieDetailName"
+                    android:layout_marginBottom="@dimen/margin_medium_2"
+                    android:layout_alignStart="@id/tvMovieDetailName"
+                    android:layout_width="60dp"
+                    android:layout_height="@dimen/margin_xlarge"/>
+                <!--android:layout_width="@dimen/width_release_year"-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvRating"
+                    android:text="9,75"
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/white"
+                    android:layout_alignParentEnd="true"
+                    android:layout_above="@id/tvMovieDetailName"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:rating="5"
+                    android:numStars="5"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_alignTop="@id/tvRating"
+                    android:layout_toStartOf="@id/tvRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNumberOfVotes"
+                    android:text="13344 Votes"
+                    android:elevation="@dimen/margin_small"
+                    android:textSize="@dimen/text_small"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textStyle="bold"
+                    android:layout_above="@id/tvMovieDetailName"
+                    android:layout_toStartOf="@id/tvRating"
+                    android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:layout_marginBottom="@dimen/margin_card_medium_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivAccessTime"
+                android:contentDescription="time"
+                android:paddingTop="@dimen/margin_small"
+                android:scaleType="centerCrop"
+                app:tint="@color/colorAccent"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                app:srcCompat="@drawable/ic_baseline_access_time_white_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAccessTime"
+                android:text="2hr 30min"
+                android:textColor="@color/white"
+                android:paddingTop="@dimen/margin_small"
+                android:layout_toEndOf="@id/ivAccessTime"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFirstGenre"
+                tools:text="Action"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@id/tvAccessTime"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:background="@drawable/bg_movie_genre"
+                android:paddingStart="@dimen/margin_medium"
+                android:paddingEnd="@dimen/margin_medium"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="@dimen/margin_xlarge"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSecondGenre"
+                tools:text="Family"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@id/tvFirstGenre"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:background="@drawable/bg_movie_genre"
+                android:paddingStart="@dimen/margin_medium"
+                android:paddingEnd="@dimen/margin_medium"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="@dimen/margin_xlarge"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvThirdGenre"
+                tools:text="Adventure"
+                android:textColor="@color/white"
+                android:layout_toEndOf="@id/tvSecondGenre"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:background="@drawable/bg_movie_genre"
+                android:paddingStart="@dimen/margin_medium"
+                android:paddingEnd="@dimen/margin_medium"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="@dimen/margin_xlarge"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivHeart"
+                app:srcCompat="@drawable/ic_baseline_favorite_border_white_24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitleStoryLine"
+                android:text="@string/lbl_storyline"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:layout_below="@id/ivAccessTime"
+                android:textColor="@color/colorSecondaryText"
+                android:textStyle="bold"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieOverview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTitleStoryLine"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_marginBottom="@dimen/margin_medium_2"
+                tools:text="The Wolverine is the second film of the Wolverine trilogy and the sixth installment in the X-Men film series overall. Directed by James Mangold, the film is a sequel to X-Men: The Last Stand and stars Hugh Jackman, reprising the role of Wolverine, living in isolation after killing Jean Grey, and his subsequent trip to Japan, where he encounters a figure from his past."
+                android:textColor="@color/white" />
+
+            <!-- play trailer-->
+            <RelativeLayout
+                android:id="@+id/btnMovieTrailer"
+                android:layout_below="@id/tvMovieOverview"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:paddingStart="@dimen/margin_medium_2"
+                android:paddingEnd="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:background="@drawable/bg_play_movie_trailer"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/margin_xxlarge">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPlayBtn"
+                    app:srcCompat="@drawable/ic_baseline_play_circle_filled_white_24dp"
+                    android:layout_centerVertical="true"
+                    app:tint="@color/colorTransparentOverlayPlayBtn"
+                    android:layout_width="@dimen/margin_xlarge"
+                    android:layout_height="@dimen/margin_xlarge"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPlayTrailer"
+                    android:text="PLAY TRAILER"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/ivPlayBtn"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+            <!-- rate movie-->
+            <RelativeLayout
+                android:id="@+id/btnRateMovie"
+                android:background="@drawable/bg_rate_movie"
+                android:layout_toEndOf="@id/btnMovieTrailer"
+                android:layout_alignTop="@id/btnMovieTrailer"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:paddingStart="@dimen/margin_medium_2"
+                android:paddingEnd="@dimen/margin_medium_2"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/margin_xxlarge">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivStart"
+                    app:tint="@color/colorAccent"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@drawable/ic_baseline_star_white_24dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvRateMovie"
+                    android:text="@string/lbl_rate_movie"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_toEndOf="@id/ivStart"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+            <!--view pod actors-->
+            <include
+                android:id="@+id/viewPodActors"
+                layout="@layout/view_pod_actor_list"
+                android:layout_below="@id/btnRateMovie"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAboutFilmLable"
+                android:text="ABOUT FIML"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:textColor="@color/colorSecondaryText"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:layout_below="@id/viewPodActors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+<!--            original title-->
+            <LinearLayout
+                android:id="@+id/llOriginalTitle"
+                android:weightSum="1"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_below="@id/tvAboutFilmLable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOriginaltitleLable"
+                    android:text="@string/lbl_original_title"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_weight="0.3"
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOriginalTitle"
+                    tools:text="@string/fantastic_beasts_and_where_to_find_them"
+                    android:textColor="@color/white"
+                    android:layout_weight="0.7"
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+<!--            type-->
+            <LinearLayout
+                android:id="@+id/llType"
+                android:weightSum="1"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:layout_below="@id/llOriginalTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTypeLable"
+                    android:text="@string/lbl_type"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_weight="0.3"
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvType"
+                    tools:text="Fantasty, Family, Adventure"
+                    android:textColor="@color/white"
+                    android:layout_weight="0.7"
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+<!--            production-->
+            <LinearLayout
+                android:id="@+id/llProduction"
+                android:weightSum="1"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:layout_below="@id/llType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvProductionLable"
+                    android:text="@string/lbl_production"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_weight="0.3"
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvProduction"
+                    tools:text="United Kingdom, USA"
+                    android:textColor="@color/white"
+                    android:layout_weight="0.7"
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+<!--            Premiere-->
+            <LinearLayout
+                android:id="@+id/llPremiere"
+                android:weightSum="1"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:layout_below="@id/llProduction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPremiereLable"
+                    android:text="@string/lbl_premiere"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_weight="0.3"
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPremiere"
+                    tools:text="8 November 2022(World)"
+                    android:textColor="@color/white"
+                    android:layout_weight="0.7"
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <!--            Description-->
+            <LinearLayout
+                android:id="@+id/llDescription"
+                android:weightSum="1"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:layout_marginBottom="@dimen/margin_medium_2"
+                android:layout_below="@id/llPremiere"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDescriptionLable"
+                    android:text="@string/lbl_description"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_weight="0.3"
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDescription"
+                    tools:text="The Wolverine is the second film of the Wolverine trilogy and the sixth installment in the X-Men film series overall. Directed by James Mangold, the film is a sequel to X-Men: The Last Stand and stars Hugh Jackman, reprising the role of Wolverine, living in isolation after killing Jean Grey, and his subsequent trip to Japan, where he encounters a figure from his past."
+                    android:textColor="@color/white"
+                    android:layout_weight="0.7"
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+            <!--view pod creators-->
+            <include
+                android:id="@+id/viewPodCreators"
+                layout="@layout/view_pod_actor_list"
+                android:layout_below="@id/llDescription"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
